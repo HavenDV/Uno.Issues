@@ -10,22 +10,14 @@
     >
     <Grid>
         <TextBlock
-            Margin="20"
-            FontSize="30"
+            x:Name="topLevel"
+            Tag="42"
             >
             <TextBlock.Text>
-                <x:String>Hello, world!</x:String>
-            </TextBlock.Text>
-        </TextBlock>
-        <TextBlock
-            Margin="20"
-            FontSize="30"
-            >
-            <TextBlock.Text>
-                <Binding Path="Test">
-                    <Binding.ConverterParameter>
-                        <x:String>Hello, world!</x:String>
-                    </Binding.ConverterParameter>
+                <Binding Path="Tag">
+                    <Binding.ElementName>
+                        <x:String>topLevel</x:String>
+                    </Binding.ElementName>
                 </Binding>
             </TextBlock.Text>
         </TextBlock>
