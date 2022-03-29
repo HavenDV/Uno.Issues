@@ -1,0 +1,21 @@
+{
+  "solution": {
+    "path": "object_instead_staticresource.sln",
+    "projects": [
+		"object_instead_staticresource.Shared\\object_instead_staticresource.Shared.shproj",
+
+		"object_instead_staticresource.Droid\\object_instead_staticresource.Droid.csproj",
+
+		"object_instead_staticresource.iOS\\object_instead_staticresource.iOS.csproj",
+
+
+		"object_instead_staticresource.Wasm\\object_instead_staticresource.Wasm.csproj",
+
+		"object_instead_staticresource.macOS\\object_instead_staticresource.macOS.csproj",
+
+		"object_instead_staticresource.Skia.Gtk\\object_instead_staticresource.Skia.Gtk.csproj",
+
+		"object_instead_staticresource.Skia.Linux.FrameBuffer\\object_instead_staticresource.Skia.Linux.FrameBuffer.csproj",
+    ]
+  }
+}
