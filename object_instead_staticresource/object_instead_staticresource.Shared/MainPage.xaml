@@ -6,9 +6,28 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    >
     <Grid>
-      <TextBlock Text="Hello, world!" Margin="20" FontSize="30" />
+        <TextBlock
+            Margin="20"
+            FontSize="30"
+            >
+            <TextBlock.Text>
+                <x:String>Hello, world!</x:String>
+            </TextBlock.Text>
+        </TextBlock>
+        <TextBlock
+            Margin="20"
+            FontSize="30"
+            >
+            <TextBlock.Text>
+                <Binding Path="Test">
+                    <Binding.ConverterParameter>
+                        <x:String>Hello, world!</x:String>
+                    </Binding.ConverterParameter>
+                </Binding>
+            </TextBlock.Text>
+        </TextBlock>
     </Grid>
 </Page>
