@@ -14,10 +14,44 @@
             Tag="42"
             >
             <TextBlock.Text>
-                <Binding Path="Tag">
+                <Binding>
+                    <Binding.Path>
+                        <PropertyPath>Tag</PropertyPath>
+                    </Binding.Path>
                     <Binding.ElementName>
                         <x:String>topLevel</x:String>
                     </Binding.ElementName>
+                    <Binding.Converter>
+                        <local:Binding_Xaml_Object_With_Xaml_Object_Converter_Return_Value_Converter />
+                    </Binding.Converter>
+                    <Binding.ConverterParameter>
+                        <x:String>topLevel</x:String>
+                    </Binding.ConverterParameter>
+                    <Binding.ConverterLanguage>
+                        <x:String>topLevel</x:String>
+                    </Binding.ConverterLanguage>
+                    <Binding.UpdateSourceTrigger>
+                        <UpdateSourceTrigger>Default</UpdateSourceTrigger>
+                    </Binding.UpdateSourceTrigger>
+                    <Binding.TargetNullValue>
+                        <x:String>TargetNullValue</x:String>
+                    </Binding.TargetNullValue>
+                    <Binding.FallbackValue>
+                        <x:String>FallbackValue</x:String>
+                    </Binding.FallbackValue>
+                    <Binding.Mode>
+                        <BindingMode>OneWay</BindingMode>
+                    </Binding.Mode>
+                    <Binding.RelativeSource>
+                        <RelativeSource>
+                            <RelativeSource.Mode>
+                                <RelativeSourceMode>None</RelativeSourceMode>
+                            </RelativeSource.Mode>
+                        </RelativeSource>
+                    </Binding.RelativeSource>
+                    <Binding.Source>
+                        <x:String>Source</x:String>
+                    </Binding.Source>
                 </Binding>
             </TextBlock.Text>
         </TextBlock>

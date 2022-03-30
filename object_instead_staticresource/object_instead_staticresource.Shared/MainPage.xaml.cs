@@ -26,5 +26,18 @@ namespace object_instead_staticresource
         {
             this.InitializeComponent();
         }
-    }
+	}
+
+	public sealed class Binding_Xaml_Object_With_Xaml_Object_Converter_Return_Value_Converter : IValueConverter
+	{
+		public object Convert(object value, Type targetType, object parameter, string language)
+		{
+			return value;
+		}
+
+		public object ConvertBack(object value, Type targetType, object parameter, string language)
+		{
+			return value;
+		}
+	}
 }
