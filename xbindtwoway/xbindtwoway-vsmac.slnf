@@ -1,0 +1,13 @@
+{
+  "solution": {
+    "path": "xbindtwoway.sln",
+    "projects": [
+		"xbindtwoway.Shared\\xbindtwoway.Shared.shproj",
+
+
+		"xbindtwoway.Wasm\\xbindtwoway.Wasm.csproj",
+
+		"xbindtwoway.Skia.Gtk\\xbindtwoway.Skia.Gtk.csproj",
+    ]
+  }
+}

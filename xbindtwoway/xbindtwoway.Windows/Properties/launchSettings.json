@@ -1,0 +1,10 @@
+{
+	"profiles": {
+		"xbindtwoway.Windows (Package)": {
+			"commandName": "MsixPackage"
+		},
+		"xbindtwoway.Windows (Unpackaged)": {
+			"commandName": "Project"
+		}
+	}
+}
