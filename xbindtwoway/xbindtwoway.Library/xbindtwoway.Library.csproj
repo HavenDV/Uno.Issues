@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0-windows10.0.18362.0;netstandard2.0</TargetFrameworks>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Uno.WinUI" Version="4.4.13" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.0" Condition="'$(TargetFramework)' == 'net6.0-windows10.0.18362.0'" />
+  </ItemGroup>
+
+</Project>
