@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup Label="GlobalUsings">
+    <Using Remove="System.Net.Http" />
+    
+    <Using Include="ReactiveUI" />
+    <Using Include="System.Reactive" />
+    <Using Include="System.Reactive.Linq" />
+    <Using Include="ReactiveUI.Fody.Helpers" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ReactiveUI.Fody" Version="17.1.50" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="H.ReactiveUI.CommonInteractions.Core" Version="1.0.53" />
+  </ItemGroup>
+
+</Project>
