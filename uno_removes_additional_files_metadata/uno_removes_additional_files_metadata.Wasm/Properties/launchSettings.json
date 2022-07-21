@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "uno_removes_additional_files_metadata.Wasm": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:63233;http://localhost:63234"
+    }
+  }
+}

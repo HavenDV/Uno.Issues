@@ -1,0 +1,10 @@
+{
+	"profiles": {
+		"uno_removes_additional_files_metadata.Windows (Package)": {
+			"commandName": "MsixPackage"
+		},
+		"uno_removes_additional_files_metadata.Windows (Unpackaged)": {
+			"commandName": "Project"
+		}
+	}
+}

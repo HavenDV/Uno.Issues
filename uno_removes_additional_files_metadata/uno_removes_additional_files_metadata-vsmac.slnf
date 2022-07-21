@@ -1,0 +1,13 @@
+{
+  "solution": {
+    "path": "uno_removes_additional_files_metadata.sln",
+    "projects": [
+		"uno_removes_additional_files_metadata.Shared\\uno_removes_additional_files_metadata.Shared.shproj",
+
+
+		"uno_removes_additional_files_metadata.Wasm\\uno_removes_additional_files_metadata.Wasm.csproj",
+
+		"uno_removes_additional_files_metadata.Skia.Gtk\\uno_removes_additional_files_metadata.Skia.Gtk.csproj",
+    ]
+  }
+}
