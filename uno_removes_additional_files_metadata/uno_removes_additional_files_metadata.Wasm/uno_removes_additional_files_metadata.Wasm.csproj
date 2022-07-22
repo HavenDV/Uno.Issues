@@ -71,13 +71,13 @@
 
   <Target Name="CheckMetadataBefore" BeforeTargets="_InjectAdditionalFiles">
 
-    <Message Text="AdditionalFiles: %(AdditionalFiles.Identity) SourceItemGroup: %(AdditionalFiles.SourceItemGroup) SomeMetadata: %(AdditionalFiles.SomeMetadata)" Importance="high"/>
+    <Message Text="AdditionalFiles: %(AdditionalFiles.Identity) SourceItemGroup: %(AdditionalFiles.SourceItemGroup) SomeMetadata: %(AdditionalFiles.SomeMetadata)" Importance="high" />
 
   </Target>
 
   <Target Name="CheckMetadataAfterBuild" AfterTargets="AfterBuild">
 
-    <Message Text="AdditionalFiles: %(AdditionalFiles.Identity) SourceItemGroup: %(AdditionalFiles.SourceItemGroup) SomeMetadata: %(AdditionalFiles.SomeMetadata)" Importance="high"/>
+    <Message Text="AdditionalFiles: %(AdditionalFiles.Identity) SourceItemGroup: %(AdditionalFiles.SourceItemGroup) SomeMetadata: %(AdditionalFiles.SomeMetadata)" Importance="high" />
 
   </Target>
 
@@ -114,19 +114,19 @@
 
     <ItemGroup Label="Reinclude by full path">
       <_AdditionalFilesMetadata Include="@(AdditionalFiles)" />
-      <AdditionalFiles Remove="%(AdditionalFiles.Identity)" />
+      <AdditionalFiles Remove="@(AdditionalFiles)" />
       <AdditionalFiles Include="@(_AdditionalFilesMetadata->Metadata('FullPath'))" />
     </ItemGroup>
 
     <ItemGroup Label="Include new additional files">
-      <_ExistingAdditionalFiles Include="%(AdditionalFiles.FullPath)" />
-      <AdditionalFiles Include="%(Page.FullPath)" SourceItemGroup="Page" Condition="$(_UnoPages) == ''" Exclude="@(_ExistingAdditionalFiles)" />
-      <AdditionalFiles Include="%(ApplicationDefinition.FullPath)" SourceItemGroup="ApplicationDefinition" Condition="$(_UnoApplicationDefinitions) == ''" Exclude="@(_ExistingAdditionalFiles)" />
-      <AdditionalFiles Include="%(PRIResource.FullPath)" SourceItemGroup="PRIResource" Exclude="@(_ExistingAdditionalFiles)" />
-      <AdditionalFiles Include="%(TSBindingAssemblySource.FullPath)" SourceItemGroup="TSBindingAssemblySource" Exclude="@(_ExistingAdditionalFiles)" />
-      <AdditionalFiles Include="%(UnoPage.FullPath)" SourceItemGroup="Page" Exclude="@(_ExistingAdditionalFiles)" />
-      <AdditionalFiles Include="%(UnoApplicationDefinition.FullPath)" SourceItemGroup="ApplicationDefinition" Exclude="@(_ExistingAdditionalFiles)" />
-    </ItemGroup>
+      <_ExistingAdditionalFiles Include="@(AdditionalFiles->Metadata('FullPath'))" />
+      <AdditionalFiles Include="@(Page->Metadata('FullPath'))" SourceItemGroup="Page" Exclude="@(_ExistingAdditionalFiles)" />
+      <AdditionalFiles Include="@(ApplicationDefinition->Metadata('FullPath'))" SourceItemGroup="ApplicationDefinition" Exclude="@(_ExistingAdditionalFiles)" />
+      <AdditionalFiles Include="@(PRIResource->Metadata('FullPath'))" SourceItemGroup="PRIResource" Exclude="@(_ExistingAdditionalFiles)" />
+      <AdditionalFiles Include="@(TSBindingAssemblySource->Metadata('FullPath'))" SourceItemGroup="TSBindingAssemblySource" Exclude="@(_ExistingAdditionalFiles)" />
+      <AdditionalFiles Include="@(UnoPage->Metadata('FullPath'))" SourceItemGroup="Page" Exclude="@(_ExistingAdditionalFiles)" />
+      <AdditionalFiles Include="@(UnoApplicationDefinition->Metadata('FullPath'))" SourceItemGroup="ApplicationDefinition" Exclude="@(_ExistingAdditionalFiles)" />
+    </ItemGroup> 
 
     <Message Text="Output AdditionalFiles: %(AdditionalFiles.Identity) SourceItemGroup: %(AdditionalFiles.SourceItemGroup)  SomeMetadata: %(AdditionalFiles.SomeMetadata)" Importance="high"/>
 
