@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.7.0-ci307" />
+  </ItemGroup>
+
+  <Target Name="RemoveDuplicateAnalyzers" BeforeTargets="CoreCompile">
+    <!-- Work around https://github.com/dotnet/wpf/issues/6792 -->
+
+    <ItemGroup>
+      <FilteredAnalyzer Include="@(Analyzer-&gt;Distinct())" />
+      <Analyzer Remove="@(Analyzer)" />
+      <Analyzer Include="@(FilteredAnalyzer)" />
+    </ItemGroup>
+  </Target>
+
+</Project>
